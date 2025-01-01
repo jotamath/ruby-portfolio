@@ -1,0 +1,103 @@
+.card-collection {
+  width: 100%;
+  max-width: var(--max-width-container);
+  padding: clamp(2rem, 5vw, 4rem) var(--padding-container);
+  
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 1rem;
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+}
+
+.tech-card {
+  aspect-ratio: 1;
+  perspective: 1000px;
+  cursor: pointer;
+
+  // Para desktop (dispositivos não-touch)
+  @media (hover: hover) {
+    &:hover .tech-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  // Para dispositivos móveis
+  @media (hover: none) {
+    &.active .tech-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    
+    // Previne problemas de flickering em alguns dispositivos
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  &-front,
+  &-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    @include flex-center;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    background-color: var(--snow-white);
+    box-shadow: 0 4px 8px var(--border-color);
+    padding: 1.5rem;
+
+    &:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &-back {
+    transform: rotateY(180deg);
+    background-color: var(--charcoal-black);
+    color: var(--white);
+
+    h2 {
+      font: var(--heading3);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font: var(--paragraph2);
+      text-align: center;
+      line-height: 1.4;
+    }
+  }
+
+  .tech-icon {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+} 

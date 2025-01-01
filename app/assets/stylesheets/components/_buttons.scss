@@ -1,0 +1,27 @@
+.primary-button {
+  padding: 0.8rem 2rem;
+  border: 2px solid currentColor;
+  border-radius: 25px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font: var(--button-font);
+  display: inline-block;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
+}
+
+.secondary-button {
+  @extend .primary-button;
+  background-color: var(--primary-color);
+  color: var(--white);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+} 

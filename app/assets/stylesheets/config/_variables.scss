@@ -1,0 +1,11 @@
+:root {
+  --max-width-container: 1200px;
+  --padding-container: clamp(1rem, 3vw, 2rem);
+  --border-radius: 12px;
+  --white: #ffffff;
+}
+
+// Breakpoints
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px; 

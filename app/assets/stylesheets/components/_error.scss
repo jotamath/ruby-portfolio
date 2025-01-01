@@ -1,0 +1,20 @@
+.error-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 2rem;
+  text-align: center;
+
+  h1 {
+    font: var(--heading2);
+    color: var(--text-color);
+  }
+
+  div {
+    font: var(--paragraph1);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+} 

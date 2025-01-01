@@ -1,0 +1,24 @@
+// Configurações
+@import "config/colors";
+@import "config/typography";
+@import "config/variables";
+@import "config/mixins";
+@import "config/animations";
+
+// Base
+@import "base/reset";
+
+// Componentes
+@import "components/buttons";
+@import "components/header";
+@import "components/footer";
+@import "components/terminal";
+@import "components/stack_card";
+@import "components/projects";
+@import "components/error";
+
+// Páginas
+@import "pages/home";
+
+// Fontes
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); 

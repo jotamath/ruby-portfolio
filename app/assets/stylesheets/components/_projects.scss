@@ -1,0 +1,46 @@
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: var(--padding-container);
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  &-card {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 3px 3px 10px var(--border-color);
+    background-image: url('projects-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    padding: 32px;
+    align-content: end;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    @include tablet {
+      height: 400px;
+    }
+
+    @include mobile {
+      height: 300px;
+    }
+
+    &-title {
+      font: var(--heading2);
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+      padding-bottom: 12px;
+      text-wrap: pretty;
+    }
+
+    &-subtitle {
+      font: var(--paragraph2);
+      text-wrap: pretty;
+    }
+  }
+} 
